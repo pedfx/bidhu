@@ -1,7 +1,8 @@
 from PIL import Image
 
 for i in range(16):
-    img = Image.open("/Users/Pedro/PycharmProjects/BIDHU/docs/galaxies/galaxy" + str(i + 1) + ".jpg").transpose(Image.FLIP_LEFT_RIGHT)
+    img = Image.open("/Users/Pedro/PycharmProjects/BIDHU/docs/galaxies/galaxy" + str(i + 1) + ".jpg")\
+        .transpose(Image.FLIP_LEFT_RIGHT)
     img.save("/Users/Pedro/PycharmProjects/BIDHU/docs/galaxies/galaxy" + str(801 + i) + ".jpg")
 
 

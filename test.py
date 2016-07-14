@@ -11,8 +11,8 @@ from PIL import Image
 class Classificar():
 	#numerodeimagens = raw_input("Digite a quantidade de imagens a serem testadas:\n")
 	#numerodeimagens = int(numerodeimagens)
-	numerodeimagens = 20
-	sourcepath = "/Users/Pedro/PycharmProjects/BIDHU/docs/test2/"
+	numerodeimagens = 5
+	sourcepath = "/Users/Pedro/PycharmProjects/BIDHU/docs/safe test/"
 	def rodar(self):
 
 			np.set_printoptions(threshold=np.nan)
@@ -109,10 +109,10 @@ class Classificar():
 				xstrpreds[i] = str(i + 1) + "-" + xstrpreds[i]
 			strpreds = str(xstrpreds)
 			strpreds = strpreds.replace(" ", "\n")
-			strpreds = strpreds.replace("-", " - ")
 			strpreds = strpreds.replace("[", "")
 			strpreds = strpreds.replace("]", "")
 			strpreds = strpreds.replace("'", "")
 			strpreds = strpreds.replace(",", "")
+			strpreds = strpreds.replace("-", " - ")
 
 			return strpreds

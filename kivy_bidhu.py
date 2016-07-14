@@ -1,8 +1,8 @@
-from kivy.app import App # importa a classe app pra o codigo
-from kivy.uix.gridlayout import GridLayout # importa o visual de grid
-from kivy.uix.label import Label # importa a classe label pra o codigo
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.label import Label
 from test import Classificar # importa o codigo test pra esse codigo
-from kivy.uix.image import Image # importa a classe image pra o codigo
+from kivy.uix.image import Image
 
 class StartScreen(GridLayout):
 
