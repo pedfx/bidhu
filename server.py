@@ -57,10 +57,6 @@ def upload_file():
 			shutil.move(path, UPLOAD_FOLDER + '/static/galaxies/' +
 						path.replace(str(os.getcwd()), "").replace("/", ""))
 
-	#		os.rename( UPLOAD_FOLDER + '/static/galaxies/' +
-	#					path.replace(str(os.getcwd()), "").replace("/", ""),
-	#				   UPLOAD_FOLDER + '/static/galaxies/' +
-	#					path.replace(str(os.getcwd()), "").replace("/", ""))
 
 			web = "<a href= 'http://skyserver.sdss.org/dr12/en/tools/chart/image.aspx?ra=" \
 				  + str(ra) + "&dec=" + str(dec) + \
