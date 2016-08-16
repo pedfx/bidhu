@@ -1,0 +1,14 @@
+próxima semana testes de imagens (número grande de imagens)100x
+- flipped and rotated images
+fazer mais user friendly 
+- opção pasta ou single image
+- implementar scroll box
+colocar na interface o pedido de RA e DEC
+- import download images
+
+
+http://skyserver.sdss.org/dr12/en/tools/chart/image.aspx?ra=197.614455642896&
+dec=18.438168853724&width=512&height=512&scale=0.3
+
+fazer código com site
+testar imagem maior

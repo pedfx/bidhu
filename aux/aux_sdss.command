@@ -1,0 +1,1 @@
+python /Users/Pedro/PycharmProjects/BIDHU/aux_sdss.py

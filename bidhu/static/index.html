@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BIDHU - Big Data of the Huge Universe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="static/stylesheets/style.css" />
+</head>
+<body>
+	<table>
+
+			<td style='width: 30%;'><img class = 'logo' src='static/images/start.jpeg'>
+			</td>
+
+        <td>
+          <h1 align="justify">BIDHU!</h1>
+          <p style="font-size: 20px; color: #3d3d29;" align="">
+            This is a web application created for research purposes.</p>
+          <p align="left">There are two ways this tool can be used:
+            <br>- either enter the RA and DEC of the galaxy
+            <br>- or upload a single galaxy image in a JPEG or multiple images in a ZIP file.</p>
+
+		</td>
+
+<td class="ritt">
+
+			<form method="POST" enctype="multipart/form-data" name="data">
+			<br>RA: <input type="text" name="ra"><br>
+            DEC: <input type="text" name="dec"><br>
+              <input type="submit" value="Submit">
+              <br><br><br><br>
+			Select JPEG or ZIP file to upload:
+			<input type="file" name="file" id="file">
+			<input type="submit" value="Upload File" name="submit">
+              <br>
+
+        </form>
+      </td>
+
+	</table>
+</body>
+</html>

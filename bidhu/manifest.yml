@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 1024M
+  instances: 1
+  domain: mybluemix.net
+  name: bidhu
+  host: bidhu
+  disk_quota: 1024M
+  buildpack: python_buildpack
