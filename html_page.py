@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 import os
 
 class HtmlReturn:
@@ -7,15 +11,17 @@ class HtmlReturn:
 
 
 
-		begin = '<td><img style="max-width:80px" src="static/galaxies/'
-		middle =  '">'
+#		begin = '<td><img style="max-width:80px" src="static/galaxies/'
+		begin = '<td><img style="max-width:80px" src="/'
+
+		middle = '">'
 		end = "</td>"
 
 
 		imagens = imagens.split("<br>")
 		content = content.split("<br>")
 
-		for i in range(0,x):
+		for i in range(0, x):
 			imagens[i] = begin + imagens[i] + middle + content[i] + end
 
 		imagens = str(imagens)
@@ -60,13 +66,13 @@ class HtmlReturn:
 
 		<div style="" id="page1">
 					 <title> [File Uploaded!] </title>
-					 <a href="javascript:history.back()">Go Back</a>
+					 <a href="javascript:history.back();location.reload();">Go Back</a>
 																 <h1>
 								 GALAXIES:
 								 </h1>
 								 <h2><a href="#page2">see the report</a></h2>
 									 <p>
-									 ''' + web + imagens  + '''
+									 ''' + web + imagens + '''
 
 
 												 </p>

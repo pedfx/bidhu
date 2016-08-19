@@ -14,7 +14,9 @@ class Classificar():
 	def rodar(self, numerodeimagens):
 
 			np.set_printoptions(threshold=np.nan)
-			sourcepath = str(os.getcwd()) + '/static/galaxies/'
+#			sourcepath = str(os.getcwd()) + '/static/galaxies/'
+			sourcepath = str(os.getcwd())
+
 
 			# Allocates space for each new image you want to classify, each line is an image
 			X_test = np.zeros((numerodeimagens, 19200), dtype=np.int)
@@ -98,11 +100,17 @@ class Classificar():
 				verbose=1,
 			)
 
-			net1.load_params_from(os.path.join(sourcepath.replace("/static/galaxies/","/static/") ,"train.txt"))  # Read model
+#			net1.load_params_from(os.path.join(sourcepath.replace("/static/galaxies/","/static/") ,"train.txt"))  # Read model
+			net1.load_params_from(os.path.join(sourcepath, "#0#0#0#.txt"))  # Read model
+
+
 
 			preds = net1.predict(X_test)  # make predictions
 
-			strfiles = strfiles.replace(str(os.getcwd()), "").replace(".jpeg", '').replace("/static/galaxies/", "")
+#			strfiles = strfiles.replace(str(os.getcwd()), "").replace(".jpeg", '').replace("/static/galaxies/", "")
+
+			strfiles = strfiles.replace(str(os.getcwd()), "").replace(".jpeg", '').replace("/", '')
+
 
 			strfiles = strfiles.split("<br>")
 
@@ -127,9 +135,11 @@ class Classificar():
 #			for i in range(len(xstrpreds)):
 #				xstrpreds[i] = str(i + 1) + "-" + xstrpreds[i]
 #			strpreds = str(xstrpreds)
+
 			strpreds = strpreds.replace("[", "")
 			strpreds = strpreds.replace("]", "")
 			strpreds = strpreds.replace("'", "")
+
 #			strpreds = strpreds.replace(",", "")
 #			strpreds = strpreds.replace("-", " - ")
 

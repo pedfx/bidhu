@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 import urllib
 from flask import Flask, request
@@ -6,7 +9,7 @@ from html_page import HtmlReturn
 from PIL import Image
 import glob
 import zipfile
-import shutil
+# import shutil
 from test import Classificar
 
 UPLOAD_FOLDER = str(os.getcwd())
@@ -23,12 +26,25 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
+
+#	if request.method == 'GET':
+#		folder = UPLOAD_FOLDER + '/static/galaxies/'
+#		for erase in os.listdir(folder):
+#			file_path = os.path.join(folder, erase)
+#			if os.path.isfile(file_path):
+#				os.unlink(file_path)
+
 	if request.method == 'GET':
-		folder = UPLOAD_FOLDER + '/static/galaxies/'
-		for erase in os.listdir(folder):
-			file_path = os.path.join(folder, erase)
+		folder = UPLOAD_FOLDER
+		for filetobeerased in glob.glob(os.path.join(app.config['UPLOAD_FOLDER'], '*.jpeg')):
+			file_path = os.path.join(folder, filetobeerased)
+			if os.path.isfile(file_path):
+					os.unlink(file_path)
+		for filetobeerased in glob.glob(os.path.join(app.config['UPLOAD_FOLDER'], '*.zip')):
+			file_path = os.path.join(folder, filetobeerased)
 			if os.path.isfile(file_path):
 				os.unlink(file_path)
+
 	if request.method == 'POST':
 		ra = (request.form['ra'])
 		dec = (request.form['dec'])
@@ -50,8 +66,8 @@ def upload_file():
 			im = Image.open(path)
 			im.thumbnail(size, Image.ANTIALIAS)
 			im.save(path, "JPEG")
-			shutil.move(path, UPLOAD_FOLDER + '/static/galaxies/' +
-						path.replace(str(os.getcwd()), "").replace("/", ""))
+#			shutil.move(path, UPLOAD_FOLDER + '/static/galaxies/' +
+#						path.replace(str(os.getcwd()), "").replace("/", ""))
 
 			web = "<a href= 'http://skyserver.sdss.org/dr12/en/tools/chart/image.aspx?ra=" \
 				  + str(ra) + "&dec=" + str(dec) + \
@@ -90,9 +106,11 @@ def upload_file():
 				size = 80, 80
 
 				img.thumbnail(size, Image.ANTIALIAS)
-				img.save((os.path.join(app.config['UPLOAD_FOLDER'] + '/static/galaxies/', filename)))
-				shutil.move(filepath, UPLOAD_FOLDER + '/static/galaxies/' +
-							filepath.replace(str(os.getcwd()), "").replace("/", ""))
+#				img.save((os.path.join(app.config['UPLOAD_FOLDER'] + '/static/galaxies/', filename)))
+#				shutil.move(filepath, UPLOAD_FOLDER + '/static/galaxies/' +
+#							filepath.replace(str(os.getcwd()), "").replace("/", ""))
+				img.save(filepath)
+
 				content1 = filepath + "<br>"
 
 			if 'zip' in extension:
@@ -103,8 +121,8 @@ def upload_file():
 				for index in glob.glob(os.path.join(app.config['UPLOAD_FOLDER'], '*.jpeg')):
 					x += 1
 					content1 += index + "<br>"
-					shutil.move(index, UPLOAD_FOLDER + '/static/galaxies/' +
-								index.replace(str(os.getcwd()), "").replace("/", ""))
+#					shutil.move(index, UPLOAD_FOLDER + '/static/galaxies/' +
+#								index.replace(str(os.getcwd()), "").replace("/", ""))
 
 		if x != 0:
 			class1 = Classificar()
