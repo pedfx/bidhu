@@ -14,7 +14,6 @@ class Classificar():
 	def rodar(self, numerodeimagens):
 
 			np.set_printoptions(threshold=np.nan)
-#			sourcepath = str(os.getcwd()) + '/static/galaxies/'
 			sourcepath = str(os.getcwd())
 
 
@@ -30,7 +29,7 @@ class Classificar():
 				strfiles += files + '<br>'
 				i += 1
 
-			#quantidade = str(i)
+
 
 			# Reshape the images to help the CNN execution
 			X_test = X_test.reshape((-1, 3, 80, 80))
@@ -100,14 +99,12 @@ class Classificar():
 				verbose=1,
 			)
 
-#			net1.load_params_from(os.path.join(sourcepath.replace("/static/galaxies/","/static/") ,"train.txt"))  # Read model
 			net1.load_params_from(os.path.join(sourcepath, "#0#0#0#.txt"))  # Read model
 
 
 
 			preds = net1.predict(X_test)  # make predictions
 
-#			strfiles = strfiles.replace(str(os.getcwd()), "").replace(".jpeg", '').replace("/static/galaxies/", "")
 
 			strfiles = strfiles.replace(str(os.getcwd()), "").replace(".jpeg", '').replace("/", '')
 
@@ -131,17 +128,10 @@ class Classificar():
 			strpreds = strpreds.replace(",", "<br>")
 
 
-#			xstrpreds = (strpreds.splitlines())
-#			for i in range(len(xstrpreds)):
-#				xstrpreds[i] = str(i + 1) + "-" + xstrpreds[i]
-#			strpreds = str(xstrpreds)
 
 			strpreds = strpreds.replace("[", "")
 			strpreds = strpreds.replace("]", "")
 			strpreds = strpreds.replace("'", "")
-
-#			strpreds = strpreds.replace(",", "")
-#			strpreds = strpreds.replace("-", " - ")
 
 
 			return strpreds

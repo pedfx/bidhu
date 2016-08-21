@@ -1,12 +1,36 @@
 #BIDHU Python Web application
 
-Research project for Catholic University of America.
+**Research project for Catholic University of America.**
+###Project files:
+    /bidhu
 
-It has the machine learning code that identifies if the galaxy is colliding or not.
-It can be used to get image files in `.jpeg` and show the machine learning code result for this image.
-Or can be used to upload a `.zip`file with galaxies in `.jpeg` or even the `.jpeg` directly and then show the machine learning code result for these images.
+        /aux  >> old codes
+        /docs  >> galaxies images for traning and testing
+        /static
+            /galaxies  >> folder where galaxies are stored
+            index.html  >> index page
+        #0#0#0#.txt  >> file with galaxy training settings
+        cleaner.py  >> clean the galaxies folder
+        getimg.py  >> get the images from coordinates
+        html_page.py  >> create the html page with results
+        manifest.yml  >> IBM Bluemix manifest file
+        Procfile  >> define init pyhton file
+        requirements.txt  >> requeriments on pip
+        runtime.txt  >> python version used
+        server.py  >> server file
+        test.py  >> test the galaxies
+        upimg.py  >> upload the .zip or .jpeg file
 
-=======
 
-`Pedro Xavier`
+####Uses of the web application:
+The purpose of this web app is to find out if galaxies
+are colliding or not.
+
+To check on the galaxies, it can be uploaded `.JPEG` or `.ZIP`
+files with the images within them, OR it can be written
+ the coordinates in the form.
+
+#####=======
+
+_Pedro Xavier_
 

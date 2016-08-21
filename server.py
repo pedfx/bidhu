@@ -22,13 +22,13 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-
 	if request.method == 'GET':
 		call = Clean()
 		call.clean(UPLOAD_FOLDER)
 
 	if request.method == 'POST':
-		ra = (request.form['ra']);	dec = (request.form['dec'])
+		ra = (request.form['ra']);
+		dec = (request.form['dec'])
 
 		if ra != "" and dec != "":
 			call = ImgGetter()
@@ -43,13 +43,11 @@ def upload_file():
 			return app.send_static_file('index.html')
 
 		if file and allowed_file(file.filename):
-
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
 			call = ImgUper()
 			return call.upimger(filename)
-
 
 	return app.send_static_file('index.html')
 

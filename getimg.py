@@ -9,21 +9,19 @@ app = Flask(__name__)
 UPLOAD_FOLDER = str(os.getcwd())
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
 class ImgGetter():
 	def getimg(self):
-		ra = (request.form['ra'])
-		dec = (request.form['dec'])
-		x = 0
-		content1 = ''
-		web = ''
+		ra = (request.form['ra']); dec = (request.form['dec'])
+
 		if ra != "" and dec != "":
-			x = 1
-			ra = float(ra)
-			dec = float(dec)
+			x = 1; ra = float(ra); dec = float(dec)
+
 			web = 'http://skyserver.sdss.org/dr12/SkyserverWS/ImgCutout/getjpeg?' \
 				  'TaskName=Skyserver.Chart.Image&ra=' \
 				  + str(ra) + '&dec=' + str(dec) + \
 				  '&width=512&height=512&scale=0.2'
+
 			name = "RA{" + str(ra) + "}DEC{" + str(dec) + "}.jpeg"
 			path = (os.path.join(app.config['UPLOAD_FOLDER'], name))
 			urllib.urlretrieve(web, path)
@@ -37,10 +35,6 @@ class ImgGetter():
 				  "&width=512&height=512&scale=0.2'> " \
 				  "Open on SDSS website.</a><br>"
 
-#			for root, dirs, files in os.walk(os.getcwd()):
-#				if imagetobefound in files:
-#					print os.path.join(root, imagetobefound)
-
 			content1 = path
 
 			class1 = Classificar()
@@ -49,3 +43,9 @@ class ImgGetter():
 			html = class2.htmlstring(content1, content2, x, web)
 
 			return html
+
+# to find the path where images are located use this code:
+
+#			for root, dirs, files in os.walk(os.getcwd()):
+#				if imagetobefound in files:
+#					print os.path.join(root, imagetobefound)

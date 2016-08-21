@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask
 from html_page import HtmlReturn
 from PIL import Image
 import glob
