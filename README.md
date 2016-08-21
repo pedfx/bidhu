@@ -1,7 +1,7 @@
 #BIDHU Python Web application
 
 
-####Uses of the web application:
+###Uses of the web application:
 The purpose of this web app is to find out if galaxies
 are colliding or not.
 
