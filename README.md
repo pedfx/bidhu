@@ -1,6 +1,15 @@
 #BIDHU Python Web application
 
 **Research project for Catholic University of America.**
+
+####Uses of the web application:
+The purpose of this web app is to find out if galaxies
+are colliding or not.
+
+To check on the galaxies, it can be uploaded `.JPEG` or `.ZIP`
+files with the images within them, OR it can be written
+ the coordinates in the form.
+
 ###Project files:
     /bidhu
 
@@ -21,16 +30,7 @@
         test.py  >> test the galaxies
         upimg.py  >> upload the .zip or .jpeg file
 
-
-####Uses of the web application:
-The purpose of this web app is to find out if galaxies
-are colliding or not.
-
-To check on the galaxies, it can be uploaded `.JPEG` or `.ZIP`
-files with the images within them, OR it can be written
- the coordinates in the form.
-
-#####=======
+######=======
 
 _Pedro Xavier_
 
