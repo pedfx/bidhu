@@ -1,24 +1,40 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-
 import os
+from shutil import copyfile
+
 
 class HtmlReturn:
 	def htmlstring(self, imagens, content, x, web):
 		report = content
 		imagens = imagens.replace(str(os.getcwd()), "").replace("/", "")
 
+		print len(imagens.split())
+		print imagens
 
+		if len(imagens.split()) > 1:
+			print len(imagens.split())
+			print imagens.split()
+			for line in imagens.split('\n'):
+				if line is not '':
+					rsc = os.path.join(os.getcwd(), line)
+					dsc = os.getcwd() + "/static/galaxies/" + line
+					print rsc + dsc
+					print '1'
+					copyfile(rsc, dsc)
+		else:
+			print len(imagens.split())
+			rsc = os.path.join(os.getcwd(), imagens)
+			dsc = os.getcwd() + "/static/galaxies/" + imagens
+			print rsc + dsc
+			print '2'
+			copyfile(rsc, dsc)
 
-#		begin = '<td><img style="max-width:80px" src="static/galaxies/'
-		begin = '<td><img style="max-width:80px" src="/'
-
+		begin = '<td><img style="max-width:80px" src="/static/galaxies/'
 		middle = '">'
 		end = "</td>"
 
-
-		imagens = imagens.split("<br>")
+		imagens = imagens.splitlines()
 		content = content.split("<br>")
 
 		for i in range(0, x):
@@ -30,8 +46,6 @@ class HtmlReturn:
 		redo = ["'", "[", "]", "\n"]
 		for index in redo:
 			imagens = imagens.replace(index, "")
-
-
 
 		print imagens
 
@@ -88,6 +102,5 @@ class HtmlReturn:
 
 
 		'''
-
 
 		return htmlpage
