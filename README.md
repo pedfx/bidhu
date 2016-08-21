@@ -1,6 +1,5 @@
 #BIDHU Python Web application
 
-**Research project for Catholic University of America.**
 
 ####Uses of the web application:
 The purpose of this web app is to find out if galaxies
@@ -30,7 +29,15 @@ files with the images within them, OR it can be written
         test.py  >> test the galaxies
         upimg.py  >> upload the .zip or .jpeg file
 
+
+
 ######=======
 
-_Pedro Xavier_
+
+
+_**Pedro Xavier**_
+
+_Research project for Catholic University of America._
+
+
 
