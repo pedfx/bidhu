@@ -24,7 +24,8 @@ def allowed_file(filename):
 def upload_file():
 	if request.method == 'GET':
 		call = Clean()
-		call.clean(UPLOAD_FOLDER)
+		call.clean()
+
 
 	if request.method == 'POST':
 		ra = (request.form['ra']);

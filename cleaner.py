@@ -1,21 +1,23 @@
 import os
 import glob
-import shutil
+from flask import Flask
 
+
+app = Flask(__name__)
+UPLOAD_FOLDER = str(os.getcwd())
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 class Clean():
 
-	def clean(self, UPLOAD_FOLDER):
-		folder = UPLOAD_FOLDER + '/static/galaxies/'
+	def clean(self):
 
-		if glob.glob(os.path.join(UPLOAD_FOLDER, '__MACOSX')):
-			shutil.rmtree(os.path.join(UPLOAD_FOLDER, '__MACOSX'))
+		folder = os.path.join(app.config['UPLOAD_FOLDER'], 'static', 'images', 'galaxies')
 
 		for erase in os.listdir(folder):
 			file_path = os.path.join(folder, erase)
 			if os.path.isfile(file_path):
 				os.unlink(file_path)
-		folder = UPLOAD_FOLDER
+		folder = app.config['UPLOAD_FOLDER']
 
 		for filetobeerased in glob.glob(os.path.join(UPLOAD_FOLDER, '*.jpeg')):
 			file_path = os.path.join(folder, filetobeerased)

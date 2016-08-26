@@ -18,19 +18,23 @@ class HtmlReturn:
 			for line in imagens.split('\n'):
 				if line is not '':
 					rsc = os.path.join(os.getcwd(), line)
-					dsc = os.getcwd() + "/static/galaxies/" + line
+					dsc = os.path.join(os.getcwd(), "static", "images", "galaxies", line)
+					log = os.path.join(os.getcwd(), "static", "images", "log", line)
 					print rsc + dsc
 					print '1'
 					copyfile(rsc, dsc)
+					copyfile(rsc, log)
 		else:
 			print len(imagens.split())
 			rsc = os.path.join(os.getcwd(), imagens)
-			dsc = os.getcwd() + "/static/galaxies/" + imagens
+			dsc = os.path.join(os.getcwd(), "static", "images", "galaxies", imagens)
+			log = os.path.join(os.getcwd(), "static", "images", "log", imagens)
 			print rsc + dsc
 			print '2'
 			copyfile(rsc, dsc)
+			copyfile(rsc, log)
 
-		begin = '<td><img style="max-width:80px" src="/static/galaxies/'
+		begin = '<td><img style="max-width:80px" src="/static/images/galaxies/'
 		middle = '">'
 		end = "</td>"
 
