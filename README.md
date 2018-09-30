@@ -1,7 +1,7 @@
-#BIDHU Python Web application
+# BIDHU Python Web application
 
 
-###Uses of the web application:
+### Uses of the web application:
 The purpose of this web app is to find out if galaxies
 are colliding or not.
 
@@ -9,7 +9,7 @@ To check on the galaxies, it can be uploaded `.JPEG` or `.ZIP`
 files with the images within them, OR it can be written
  the coordinates in the form.
 
-###Project files:
+### Project files:
     /bidhu
 
         /aux  >> old codes
@@ -31,7 +31,7 @@ files with the images within them, OR it can be written
 
 
 
-######=======
+###### =======
 
 
 
